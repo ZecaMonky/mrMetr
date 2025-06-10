@@ -5,6 +5,11 @@ import { FlatCompat } from "@eslint/eslintrc";
 import pluginImport from "eslint-plugin-import";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import security from "eslint-plugin-security";
+import js from '@eslint/js';
+import nextPlugin from 'eslint-config-next';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -78,6 +83,41 @@ const config = [
       "prisma/seed.js",
     ],
   },
+
+  js.configs.recommended,
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    plugins: {
+      import: pluginImport,
+      'jsx-a11y': jsxA11yPlugin,
+      react: reactPlugin,
+      'react-hooks': pluginReactHooks,
+      security: security,
+    },
+    rules: {
+      'no-console': 'off',
+      'security/detect-object-injection': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      'import/no-anonymous-default-export': 'off',
+      'jsx-a11y/alt-text': 'warn',
+      'jsx-a11y/anchor-has-content': 'warn',
+      'jsx-a11y/anchor-is-valid': 'warn',
+      'jsx-a11y/aria-props': 'warn',
+      'jsx-a11y/aria-role': 'warn',
+      'jsx-a11y/role-has-required-aria-props': 'warn',
+      'jsx-a11y/role-supports-aria-props': 'warn',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+
+  ...nextPlugin,
 ];
 
 export default config;
