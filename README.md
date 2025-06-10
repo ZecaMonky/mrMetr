@@ -1,3 +1,46 @@
+# React + SQLite + Tailwind Проект
+
+## Установка
+
+```bash
+# Клонирование репозитория
+git clone [url-репозитория]
+
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
+npm run dev
+```
+
+## Технологии
+
+- React
+- SQLite
+- Tailwind CSS
+- Prisma (ORM)
+
+## Структура проекта
+
+- `/src` - исходный код
+- `/prisma` - схемы и миграции базы данных
+- `/public` - статические файлы
+
+## Переменные окружения
+
+Создайте файл `.env` в корне проекта:
+
+```env
+DATABASE_URL="file:./dev.db"
+```
+
+## Скрипты
+
+- `npm run dev` - запуск в режиме разработки
+- `npm run build` - сборка проекта
+- `npm start` - запуск production версии
+- `npm run lint` - проверка кода
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
