@@ -1,11 +1,11 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 import Product from "../components/product";
 
-export default function CatalogPage() {
+function CatalogContent() {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -101,24 +101,30 @@ export default function CatalogPage() {
   };
 
   return (
-    <div>
-      <div className="container mx-auto w-full mt-5 px-4 sm:px-0 sm:mt-10">
-        <h1 className="text-2xl font-bold mb-4">Каталог</h1>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-          {filteredProducts.map((product) => (
-            <Product
-              key={product.id}
-              product={product}
-              addToCart={addToCart}
-              removeFromCart={removeFromCart}
-              addToFavorites={addToFavorites}
-              removeFromFavorites={removeFromFavorites}
-              isInCart={cart.some((item) => item.id === product.id)}
-              isFavorite={favorites.some((item) => item.id === product.id)}
-            />
-          ))}
-        </div>
+    <div className="container mx-auto w-full mt-5 px-4 sm:px-0 sm:mt-10">
+      <h1 className="text-2xl font-bold mb-4">Каталог</h1>
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        {filteredProducts.map((product) => (
+          <Product
+            key={product.id}
+            product={product}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+            addToFavorites={addToFavorites}
+            removeFromFavorites={removeFromFavorites}
+            isInCart={cart.some((item) => item.id === product.id)}
+            isFavorite={favorites.some((item) => item.id === product.id)}
+          />
+        ))}
       </div>
     </div>
+  );
+}
+
+export default function CatalogPage() {
+  return (
+    <Suspense fallback={<div>Загрузка...</div>}>
+      <CatalogContent />
+    </Suspense>
   );
 }
