@@ -58,9 +58,9 @@ export default function LoginPage() {
       }
 
       if (data.role === 'ADMIN') {
-        router.push('/admin')
+        window.location.href = '/admin'
       } else {
-        router.push('/profile')
+        window.location.href = '/profile'
       }
     } catch (err) {
       setError(err.message || 'Что-то пошло не так...')

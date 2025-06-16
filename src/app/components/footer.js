@@ -10,7 +10,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold">Покупателям</h3>
           <ul className="mt-2 space-y-2">
             <li><a href="catalog" className="hover:underline">Услуги</a></li>
-            <li><a href="#" className="hover:underline">Оплата</a></li>
+            <li><a href="support" className="hover:underline">Оплата</a></li>
             <li><a href="contacts" className="hover:underline">Магазины</a></li>
             <li><a href="#" className="hover:underline">Условия продажи</a></li>
             <li><a href="support" className="hover:underline">Вопросы и ответы</a></li>
@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="w-full sm:w-auto mb-6 sm:mb-0">
           <h3 className="text-lg font-semibold">О компании</h3>
           <ul className="mt-2 space-y-2">
-            <li><a href="#" className="hover:underline">О нас</a></li>
+            <li><a href="contacts" className="hover:underline">О нас</a></li>
             <li><a href="contacts" className="hover:underline">Контакты</a></li>
             <li><a href="contacts" className="hover:underline">Магазины</a></li>
             <li><a href="contacts" className="hover:underline">Реквизиты</a></li>
@@ -45,8 +45,8 @@ const Footer = () => {
 
         <nav>
           <ul className="flex justify-center sm:justify-end space-x-6 text-sm font-semibold">
-            <li><a href="#" className="hover:underline">Политика конфиденциальности</a></li>
-            <li><a href="#" className="hover:underline">Условия использования</a></li>
+            <li><a href="https://drive.google.com/uc?export=download&id=12Pattk09URQXQHONc1zwVyj3Gz3NQ2Rg" download className="hover:underline">Политика конфиденциальности</a></li>
+            <li><a href="https://drive.google.com/uc?export=download&id=1mR4PpA5yLVqrcUC_Slx5cJblF-vr93rz" download className="hover:underline">Условия использования</a></li>
           </ul>
         </nav>
       </div>

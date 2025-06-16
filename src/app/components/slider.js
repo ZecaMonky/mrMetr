@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 const banners = [
   { id: 1, src: '/banner1.png', alt: 'Баннер 1' },
   { id: 2, src: '/banner2.png', alt: 'Баннер 2' },
-  { id: 3, src: '/banner1.png', alt: 'Баннер 3' },
+  { id: 3, src: '/banner3.png', alt: 'Баннер 3' },
 ];
 
 export default function BannerSlider() {

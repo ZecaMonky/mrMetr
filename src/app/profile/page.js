@@ -64,7 +64,7 @@ export default function ProfilePage() {
   const handleLogout = async () => {
     await fetch('/api/logout', { method: 'POST' })
     Cookies.remove('authToken')
-    router.push('/login')
+    window.location.href = '/login'
   }
 
   const calculateOrderTotal = (order) => {

@@ -161,15 +161,51 @@ const Header = () => {
 
         {isOpen && (
           <div className="absolute top-32 left-0 w-full bg-white shadow-md z-20 pt-2 flex flex-col lg:hidden">
-            <Link href="/catalog" className="py-2 px-4 text-gray-700 hover:bg-gray-100">Каталог</Link>
-            <Link href="/favorites" className="py-2 px-4 text-gray-700 hover:bg-gray-100">Избранное</Link>
-            <Link href="/cart" className="py-2 px-4 text-gray-700 hover:bg-gray-100">Корзина</Link>
-            <Link href="/support" className="py-2 px-4 text-gray-700 hover:bg-gray-100">Поддержка</Link>
-            <Link href="/contacts" className="py-2 px-4 text-gray-700 hover:bg-gray-100">Контакты</Link>
+            <Link 
+              href="/catalog" 
+              onClick={() => setIsOpen(false)}
+              className="py-2 px-4 text-gray-700 hover:bg-gray-100"
+            >
+              Каталог
+            </Link>
+            <Link 
+              href="/favorites" 
+              onClick={() => setIsOpen(false)}
+              className="py-2 px-4 text-gray-700 hover:bg-gray-100"
+            >
+              Избранное
+            </Link>
+            <Link 
+              href="/cart" 
+              onClick={() => setIsOpen(false)}
+              className="py-2 px-4 text-gray-700 hover:bg-gray-100"
+            >
+              Корзина
+            </Link>
+            <Link 
+              href="/support" 
+              onClick={() => setIsOpen(false)}
+              className="py-2 px-4 text-gray-700 hover:bg-gray-100"
+            >
+              Поддержка
+            </Link>
+            <Link 
+              href="/contacts" 
+              onClick={() => setIsOpen(false)}
+              className="py-2 px-4 text-gray-700 hover:bg-gray-100"
+            >
+              Контакты
+            </Link>
 
             {loadingUser ? null : user ? (
               <>
-                <Link href="/profile" className="py-2 px-4 text-gray-700 hover:bg-gray-100">Профиль</Link>
+                <Link 
+                  href="/profile" 
+                  onClick={() => setIsOpen(false)}
+                  className="py-2 px-4 text-gray-700 hover:bg-gray-100"
+                >
+                  Профиль
+                </Link>
                 <button
                   onClick={async () => {
                     await fetch('/api/logout', { method: 'POST', credentials: 'include' });
@@ -183,10 +219,22 @@ const Header = () => {
                 </button>
               </>
             ) : (
-              <Link href="/login" className="py-2 px-4 text-gray-700 hover:bg-gray-100">Вход</Link>
+              <Link 
+                href="/login" 
+                onClick={() => setIsOpen(false)}
+                className="py-2 px-4 text-gray-700 hover:bg-gray-100"
+              >
+                Вход
+              </Link>
             )}
             <span className="py-2 px-4 text-gray-700">пн - вс с 9:00 до 21:00</span>
-            <Link className="py-2 px-4 text-gray-700" href="tel:+73532430220">+7 (3532) 43‒02‒20</Link>
+            <Link 
+              className="py-2 px-4 text-gray-700" 
+              href="tel:+73532430220"
+              onClick={() => setIsOpen(false)}
+            >
+              +7 (3532) 43‒02‒20
+            </Link>
           </div>
         )}
 
